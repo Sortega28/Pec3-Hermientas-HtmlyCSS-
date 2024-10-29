@@ -298,7 +298,8 @@ main.portada {
     font-size: 3rem;
     line-height: 1.1em;
     font-weight: 900;
-    color: var(--light-color);  
+    color: var(--light-color);
+    background-color: rgb(1, 1, 1, 0.5);  
 }
 
 main.portada section {
@@ -310,7 +311,13 @@ main.portada section {
     .portada-image p.lema {
         font-size: 4.2rem;
         max-width: 750px;
-    }}
+    
+    }
+    .top nav ul{
+        font-size: 0.85rem;
+
+    }
+}
 
 /********************* Presentación ****************************/
 
@@ -319,7 +326,7 @@ main.portada section {
 }
 
 .home .portada-image p.lema{
-    padding-bottom: 9rem;
+    background-color: rgb(1, 1, 1, 0.5);
 }
 
 section.aims {
