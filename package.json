@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "npm-run-all": "^4.1.5",
-    "parcel": "^2.8.3",
     "posthtml-include": "^2.0.1",
     "rimraf": "^6.0.1"
   },
@@ -21,6 +20,7 @@
   "description": "",
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "parcel": "^2.12.0",
     "postcss": "^8.4.47",
     "postcss-cli": "^11.0.0",
     "postcss-import": "^16.1.0"
