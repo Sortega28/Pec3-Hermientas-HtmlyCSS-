@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <link rel="icon" href="img/S.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/S.ico" type="image/x-icon" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fiestas de San Juan Soria</title>
@@ -11,17 +13,48 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="shortcut icon" href="img/logo.png" type="image/png" />
   </head>
-
   <body>
     <header class="header">
       <div class="container-fluid">
         <div class="top">
           <a href="index.html"
-            ><img src="img/logo.png" alt="Logo Soria" width="120" height="120"
+            ><img
+              src="img/logo-500.png"
+              alt="Logo Soria"
+              width="100"
+              height="100"
+              srcset="
+                img/logo-100.png 100w,
+                img/logo-200.png 200w,
+                img/logo-400.png 400w,
+                img/logo-500.png 500w
+              "
+              sizes="(max-width: 500px) 50vw, (max-width: 800px) 20vw, (max-width: 1325px) 10vw, 5vw"
           /></a>
+          <h1>
+            Descubre Soria
+            <span class="svg-sun">
+              <img src="sun.svg" alt="Sol" width="20" height="20" />
+            </span>
+          </h1>
           <nav>
-            <ul>
-              <li><a href="enlaces.html">ENLACES</a></li>
+            <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+            <ul class="menu">
+              <li>
+                <a href="presentacion.html" aria-label="Página de Presentación"
+                  >HOME</a
+                >
+              </li>
+              <li>
+                <a href="categoria.html" aria-label="Página de Categoría"
+                  >CATEGORÍA</a
+                >
+              </li>
+              <li>
+                <a href="enlaces.html" aria-label="Página de Enlaces"
+                  >ENLACES</a
+                >
+              </li>
             </ul>
           </nav>
         </div>
@@ -38,15 +71,38 @@
         </ul>
         <div class="grid-categorias-post">
           <article class="categorias-post">
-            <img
-              src="img/fiesta-de-san-juan-4.jpg"
-              alt="Plaza Mayor de Soria en el pregón de las Fiestas de San Juan"
-              width="1000"
-              height="667"
-              class="img-fluid"
-            />
+            <picture>
+              <source
+                srcset="
+                  img/fiesta-de-san-juan-4-400.webp   400w,
+                  img/fiesta-de-san-juan-4-600.webp   600w,
+                  img/fiesta-de-san-juan-4-800.webp   800w,
+                  img/fiesta-de-san-juan-4-1000.webp 1000w
+                "
+                type="image/webp"
+                sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+              />
+              <source
+                srcset="
+                  img/fiesta-de-san-juan-4-400.jpg   400w,
+                  img/fiesta-de-san-juan-4-600.jpg   600w,
+                  img/fiesta-de-san-juan-4-800.jpg   800w,
+                  img/fiesta-de-san-juan-4-1000.jpg 1000w
+                "
+                type="image/jpeg"
+                sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+              />
+              <!-- Imagen por defecto si no hay soporte para WebP o JPG (esto es muy raro, pero se mantiene como fallback) -->
+              <img
+                src="img/fiesta-de-san-juan-4-1000.jpg"
+                alt="Plaza Mayor de Soria en el pregón de las Fiestas de San Juan"
+                class="img-fluid mask-img imagen-destacada"
+                width="1000"
+                height="667"
+              />
+            </picture>
             <header>
-              <h1>Todo lo que necesitas saber sobre las fiestas de San Juan</h1>
+              <h1>Todo lo que necesitas saber sobre las fiestas de San Juan <span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></h1>
               <p class="meta-data">
                 Por Sara Ortega - 1 de julio de 2024 -
                 <a href="">Fiestas</a>
@@ -95,13 +151,40 @@
               popular.
             </p>
             <div class="card-image">
-              <img
-                src="img/la_saca.jpg"
-                alt="Toros y caballos en Valonsadero, Soria"
-                width="1000"
-                height="667"
-                class="img-fluid"
-              />
+              <picture>
+                <!-- Si el navegador soporta WebP, se usa la imagen WebP -->
+                <source
+                  srcset="
+                    img/la_saca-400.webp   400w,
+                    img/la_saca-600.webp   600w,
+                    img/la_saca-800.webp   800w,
+                    img/la_saca-1000.webp 1000w
+                  "
+                  type="image/webp"
+                  sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+                />
+
+                <!-- Si el navegador no soporta WebP, se usa la imagen JPG -->
+                <source
+                  srcset="
+                    img/la_saca-400.jpg   400w,
+                    img/la_saca-600.jpg   600w,
+                    img/la_saca-800.jpg   800w,
+                    img/la_saca-1000.jpg 1000w
+                  "
+                  type="image/jpeg"
+                  sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+                />
+
+                <!-- Imagen por defecto si no hay soporte para WebP o JPG (esto es muy raro, pero se mantiene como fallback) -->
+                <img
+                  src="img/la_saca-1000.jpg"
+                  alt="Toros y caballos en Valonsadero, Soria"
+                  class="img-fluid"
+                  width="1000"
+                  height="439"
+                />
+              </picture>
               <div class="copyright">&copy;Elige.soria</div>
             </div>
             <h2>Viernes: Viernes de Toros</h2>
@@ -157,13 +240,40 @@
                 los sorianos en torno a sus costumbres.
               </p>
               <div class="card-image">
-                <img
-                  src="img/piñorros.jpg"
-                  alt="Un chico y una chica vestidos con el traje tradicional de Soria"
-                  width="1000"
-                  height="667"
-                  class="img-fluid"
-                />
+                <picture>
+                  <!-- Si el navegador soporta WebP, se usa la imagen WebP -->
+                  <source
+                    srcset="
+                      img/piñorros-400.webp   400w,
+                      img/piñorros-600.webp   600w,
+                      img/piñorros-800.webp   800w,
+                      img/piñorros-1000.webp 1000w
+                    "
+                    type="image/webp"
+                    sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+                  />
+
+                  <!-- Si el navegador no soporta WebP, se usa la imagen JPG -->
+                  <source
+                    srcset="
+                      img/piñorros-400.jpg   400w,
+                      img/piñorros-600.jpg   600w,
+                      img/piñorros-800.jpg   800w,
+                      img/piñorros-1000.jpg 1000w
+                    "
+                    type="image/jpeg"
+                    sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+                  />
+
+                  <!-- Imagen por defecto si no hay soporte para WebP o JPG -->
+                  <img
+                    src="img/piñorros-1000.jpg"
+                    alt="Un chico y una chica vestidos con el traje tradicional de Soria"
+                    class="img-fluid"
+                    width="1000"
+                    height="667"
+                  />
+                </picture>
                 <div class="copyright">&copy;María Ferrer</div>
               </div>
               <h2>Lunes: Lunes de Bailas</h2>
@@ -201,13 +311,38 @@
               <div class="last-posts">
                 <article>
                   <div class="card-image">
-                    <img
-                      src="img/Torrezno_de_Soria.jpg"
-                      alt="Torreznos"
-                      width="1000"
-                      height="667"
-                      class="img-fluid"
-                    />
+                    <picture>
+                      <!-- Si el navegador soporta WebP, se usa la imagen WebP -->
+                      <source
+                        srcset="
+                          img/Torrezno_de_Soria-400.webp   400w,
+                          img/Torrezno_de_Soria-600.webp   600w,
+                          img/Torrezno_de_Soria-800.webp   800w,
+                          img/Torrezno_de_Soria-1200.webp 1200w
+                        "
+                        type="image/webp"
+                        sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+                      />
+                      <!-- Si el navegador no soporta WebP, se usa la imagen JPG -->
+                      <source
+                        srcset="
+                          img/Torrezno_de_Soria-400.jpg   400w,
+                          img/Torrezno_de_Soria-600.jpg   600w,
+                          img/Torrezno_de_Soria-800.jpg   800w,
+                          img/Torrezno_de_Soria-1200.jpg 1200w
+                        "
+                        type="image/jpeg"
+                        sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+                      />
+                      <!-- Imagen por defecto si no hay soporte para WebP o JPG -->
+                      <img
+                        src="img/Torrezno_de_Soria-1200.jpg"
+                        alt="Torreznos"
+                        class="img-fluid"
+                        width="1000"
+                        height="667"
+                      />
+                    </picture>
                     <a href="">Gastronomía</a>
                   </div>
                   <div class="card-content">
@@ -219,13 +354,40 @@
                 </article>
                 <article>
                   <div class="card-image">
-                    <img
-                      src="img/San_Saturio01_Soria.jpg"
-                      alt="Ermita de San Saturio"
-                      width="1000"
-                      height="667"
-                      class="img-fluid"
-                    />
+                    <picture>
+                      <!-- Si el navegador soporta WebP, se usa la imagen WebP -->
+                      <source
+                        srcset="
+                          img/San_Saturio01_Soria-300.webp   300w,
+                          img/San_Saturio01_Soria-600.webp   600w,
+                          img/San_Saturio01_Soria-800.webp   800w,
+                          img/San_Saturio01_Soria-1200.webp 1200w
+                        "
+                        type="image/webp"
+                        sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+                      />
+
+                      <!-- Si el navegador no soporta WebP, se usa la imagen JPG -->
+                      <source
+                        srcset="
+                          img/San_Saturio01_Soria-300.jpg   300w,
+                          img/San_Saturio01_Soria-600.jpg   600w,
+                          img/San_Saturio01_Soria-800.jpg   800w,
+                          img/San_Saturio01_Soria-1200.jpg 1200w
+                        "
+                        type="image/jpeg"
+                        sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+                      />
+
+                      <!-- Imagen por defecto si no hay soporte para WebP o JPG -->
+                      <img
+                        src="img/San_Saturio01_Soria-1200.jpg"
+                        alt="Ermita de San Saturio"
+                        class="img-fluid"
+                        width="1000"
+                        height="667"
+                      />
+                    </picture>
                     <a href="">Monumentos</a>
                   </div>
                   <div class="card-content">
@@ -237,13 +399,38 @@
                 </article>
                 <article>
                   <div class="card-image">
-                    <img
-                      src="img/rafting-01102019-1.jpg"
-                      alt="Un chico haciendo rafting"
-                      width="1000"
-                      height="667"
-                      class="img-fluid"
-                    />
+                    <source
+                  srcset="
+                    img/rafting-01102019-1-400.webp   400w,
+                    img/rafting-01102019-1-600.webp   600w,
+                    img/rafting-01102019-1-800.webp   800w,
+                    img/rafting-01102019-1-1200.webp 1200w
+                  "
+                  type="image/webp"
+                  sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+                />
+
+                <!-- Si el navegador no soporta WebP, se usa la imagen JPG -->
+                <source
+                  srcset="
+                    img/rafting-01102019-1-400.jpg   400w,
+                    img/rafting-01102019-1-600.jpg   600w,
+                    img/rafting-01102019-1-800.jpg   800w,
+                    img/rafting-01102019-1-1200.jpg 1200w
+                  "
+                  type="image/jpeg"
+                  sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+                />
+
+                <!-- Imagen por defecto si no hay soporte para WebP o JPG -->
+                <img
+                  src="img/rafting-01102019-1-1200.jpg"
+                  alt="Un chico haciendo rafting"
+                  class="img-fluid"
+                  width="1000"
+                  height="667"
+                />
+              </picture>
                     <a href="">Deporte</a>
                   </div>
                   <div class="card-content">
@@ -271,34 +458,64 @@
     <footer>
       <div class="container-fluid">
         <div class="flex-footer">
+          <a href="index.html" aria-label="Ir a la página principal">
+            <img
+              src="img/logo-transparente-500.png"
+              alt="Logo Soria"
+              width="102"
+              height="102"
+              srcset="
+                img/logo-transparente-100.png 100w,
+                img/logo-transparente-200.png 200w,
+                img/logo-transparente-400.png 400w,
+                img/logo-transparente-500.png 500w
+              "
+              sizes="(max-width: 500px) 50vw, (max-width: 800px) 20vw, (max-width: 1880px) 10vw, 5vw"
+            />
+          </a>
+          <div class="footer-nav">
+            <ul>
+              <li><a href="index.html" title="Página principal">Home</a></li>
+              <li>
+                <a href="categoria.html" title="Categoria">Categorías</a>
+              </li>
+              <li>
+                <a href="detalle.html" title="Detalles sobre las categorias"
+                  >Detalles</a
+                >
+              </li>
+              <li><a href="enlaces.html" title="Contacto">Enlaces</a></li>
+            </ul>
+          </div>
           <div class="footer-right">
             <ul class="social">
               <li>
-                <a href="" title="Twitter"
+                <a href="#" title="Ir a Twitter"
                   ><img src="img/twitter.svg" alt="Logo de Twitter"
                 /></a>
               </li>
               <li>
-                <a href="" title="Instagram"
+                <a href="#" title="Ir a Instagram"
                   ><img src="img/instagram.svg" alt="Logo de Instagram"
                 /></a>
               </li>
               <li>
-                <a href="" title="Youtube"
-                  ><img src="img/youtube.svg" alt="Logo de Youtube"
+                <a href="#" title="Ir a YouTube"
+                  ><img src="img/youtube.svg" alt="Logo de YouTube"
                 /></a>
               </li>
             </ul>
             <ul class="legal">
-              <li><a href="">Política de privacidad</a></li>
+              <li><a href="#">Política de privacidad</a></li>
               <li>
-                <a href="">Política de <i lang="en">cookies</i></a>
+                <a href="#">Política de <i lang="en">cookies</i></a>
               </li>
-              <li><a href="">Aviso legal</a></li>
+              <li><a href="#">Aviso legal</a></li>
             </ul>
           </div>
         </div>
       </div>
     </footer>
+    <script src="js/app.js"></script>
   </body>
 </html>

@@ -2,16 +2,20 @@
   "name": "pec1-herramientas-htmlycss",
   "version": "1.0.0",
   "source": "src/index.html",
-  "browserslist": ">0.5%, last 2 versions, not dead",
+  "browserslist": "> 0.25%, not dead, not op_mini all",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html",
     "dev": "parcel serve src/index.html",
-    "build:css": "postcss src/css/styles.css -o styles.css"
+    "build:css": "postcss src/css/styles.css -o styles.css",
+    "build": "parcel build src/index.html",
+    "serve": "parcel serve dist/index.html"
   },
   "dependencies": {
+    "core-js": "^3.39.0",
     "npm-run-all": "^4.1.5",
     "posthtml-include": "^2.0.1",
+    "regenerator-runtime": "^0.14.1",
     "rimraf": "^6.0.1"
   },
   "keywords": [],

@@ -119,6 +119,13 @@ a:hover {
     height: auto;
     display: inline;
 }
+
+.img-fluid::after {
+    content: '';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.3); /* Overlay oscuro */
+    border-radius: 8px; /* Redondear el borde del overlay */
+}
 iframe {
     width: 100%;
     height: auto;
@@ -154,7 +161,7 @@ nav ul {
 nav li:not(:last-child)::after {
     margin-left: 0.1rem;
     margin-right: 0.1rem;
-    content: " | ";
+
 }
 .top a {
     font-weight: 700;
@@ -165,10 +172,64 @@ nav li:not(:last-child)::after {
     color: var(--accent-color);
 }
 
+/* Estilo por defecto */
+.menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu li {
+    margin-right: 20px;
+  }
+  
+  /* Ocultar el botón en pantallas grandes */
+  .menu-toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+ 
+  }
+  
+  /* Estilo para pantallas pequeñas (menos de 768px) */
+  @media (max-width: 768px) {
+    .menu {
+      display: none; /* Ocultamos el menú en pantallas pequeñas */
+      flex-direction: column;
+      width: 100%;
+      background-color: #333;
+      position: absolute;
+      top: 0px; 
+      left: 0;
+    }
+  
+    .menu li {
+      margin: 0;
+      padding: 15px;
+      text-align: center;
+      background-color:var(--light-color);
+      border-top: 1px solid #555;
+
+    }
+  
+    /* Mostrar el botón del menú en pantallas pequeñas */
+    .menu-toggle {
+      display: block;
+    }
+  
+    /* Mostrar el menú cuando el botón es presionado */
+    .menu.active {
+      display: block;
+    }
+  }
+  
 /**************************************** Footer */
 footer {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.55rem;
     background-color: var(--main-color);
     color: var(--light-color);
     text-align: center;
@@ -199,6 +260,13 @@ footer a {
 footer a:hover {
     color: var(--neutral-color);
 }
+
+.footer-nav li{
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
 footer ul.social li img:hover {
     opacity: 0.7;
 }
@@ -206,7 +274,7 @@ footer ul.social li img:hover {
 @media(min-width: 992px) {
     .flex-footer {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;;
         text-align: left;
         align-items: center;
     }
@@ -222,8 +290,8 @@ footer ul.social li img:hover {
     }
     footer ul.legal li::after {
         content: " | ";
-        padding-right: .5rem;
-        padding-left: .5rem;
+        padding-right: 0rem;
+        padding-left: 0rem;
     }
     footer ul.legal li:last-child::after {
         content: "";
@@ -231,6 +299,19 @@ footer ul.social li img:hover {
         padding-left: 0;
     }
 }
+
+@media (max-width: 992px) {
+    .footer-nav ul {
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
+    }
+  
+    .footer-nav li {
+      margin-right: 0; 
+    }
+  }  
+
 
 /**************************************** Main */
 main {
@@ -280,8 +361,19 @@ main.portada {
     background-size: cover;
     background-position: center;
     color: var(--main-color);
-    
-}
+    animation: fadeIn 2s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
 
 .portada-image .copyright{
     position: absolute;
@@ -293,6 +385,7 @@ main.portada {
     font-size: 12px; 
     border-radius: 5px;
     }
+    
 
 .portada-image p.lema {
     font-size: 3rem;
@@ -306,6 +399,40 @@ main.portada section {
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
+
+
+
+/* Aplicar clip-path en las imágenes */
+.clip-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Forma de círculo */
+    clip-path: circle(50% at 50% 50%); 
+  }
+  
+  /* Otras formas creativas usando clip-path */
+  
+  /* Forma de rombo */
+  .clip-image.diamond {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+  
+  /* Forma de triángulo */
+  .clip-image.triangle {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+  
+  /* Forma de elipse */
+  .clip-image.ellipse {
+    clip-path: ellipse(50% 40% at 49% 54%);
+  }
+  
+  /* Forma irregular */
+   .clip-image.irregular {
+    clip-path: polygon(1% 12%, 14% 11%, 24% 0%, 36% 10%, 53% 1%, 67% 10%, 79% 1%, 84% 13%, 99% 19%, 90% 31%, 100% 45%, 89% 59%, 99% 70%, 86% 78%, 100% 88%, 84% 91%, 72% 100%, 53% 90%, 41% 100%, 22% 89%, 7% 99%, 7% 82%, 0% 68%, 9% 53%, 1% 40%, 9% 28%);
+  }
+  
 
 @media (min-width: 992px) {
     .portada-image p.lema {
@@ -324,6 +451,18 @@ main.portada section {
 .home .portada-image{
     height: 54.1vh;
 }
+.lema {
+    animation: fadeIn 2s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }  
 
 .home .portada-image p.lema{
     background-color: rgb(1, 1, 1, 0.5);
@@ -351,10 +490,12 @@ section.aims {
     cursor: pointer;
     font-size: 1rem;
     border-radius: 4px;
+    transition: background-color 0.5s ease-out;
 }
 .button:hover {
     background-color: var(--accent-color);
     color: white;
+    transition-duration: 2s;
 }
 
 @media (min-width: 768px) {
@@ -475,7 +616,22 @@ section.aims {
 a.more {
     display: inline-block;
     margin-top: 0;
+    animation: bounceIn 2s;
 }
+
+@keyframes bounceIn {
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 a.more::after {
     content: '\003E';
     padding-left: .5rem;
@@ -518,7 +674,34 @@ a.more::after {
     }
 }
 
-/**************************************** Página categoria */
+/**************************************** Página categoria y detalles */
+.imagen-destacada{
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+    border-radius: 10px; 
+    margin-bottom: 30px;
+    
+  }
+  
+  @media (max-width: 768px) {
+    /* En pantallas más pequeñas, la imagen puede ocupar el 100% */
+    .featured-image img {
+      border-radius: 0;
+    }
+  } 
+  
+/* Estilos para las imágenes dentro de <picture> */
+.mask-img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: transform 0.3s ease-in-out; /* Efecto de transformación */
+}
+
+.mask-img:hover {
+    transform: scale(1.05); /* Aumenta ligeramente la imagen en hover */
+}
+
+
 ul.breadcrumb {
     margin-left: 0;
     margin-top: 1rem;
@@ -568,6 +751,43 @@ ul.breadcrumb li.active {
     font-size: 2.6rem;
     margin-bottom: 1rem;
 }
+
+.dot {
+    display: inline-block;
+    font-size: 4rem; /* Tamaño de los puntos */
+    opacity: 0;
+    animation: dropBounce 1s ease-out forwards;
+    animation-delay: 0.2s; 
+  }
+  
+  .dot:nth-child(1) {
+    animation-delay: 0.4s;
+  }
+  .dot:nth-child(2) {
+    animation-delay: 0.6s;
+  }
+  .dot:nth-child(3) {
+    animation-delay: 0.8s;
+  }
+  
+  @keyframes dropBounce {
+    0% {
+      transform: translateY(-100px); /* Comienza desde arriba */
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(20px); /* Rebote hacia abajo */
+      opacity: 1;
+    }
+    75% {
+      transform: translateY(-5px); /* Rebote hacia arriba */
+    }
+    100% {
+      transform: translateY(0); /* Se queda en su posición final */
+      opacity: 1; /* Se asegura de que la opacidad sea 100% */
+    }
+  }
+  
 .categorias-post h2 {
     font-size: 2rem;
     margin-top: 1rem;
