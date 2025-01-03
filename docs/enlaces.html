@@ -11,7 +11,6 @@
       content="Vídeos de Youtube y artículos de los diintos periódicos de Soria"
     />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="shortcut icon" href="img/logo.png" type="image/png" />
   </head>
   <body>
     <header class="header">
@@ -30,11 +29,18 @@
                 img/logo-500.png 500w
               "
               sizes="(max-width: 500px) 50vw, (max-width: 800px) 20vw, (max-width: 1325px) 10vw, 5vw"
+              loading="lazy"
           /></a>
           <h1>
             Descubre Soria
             <span class="svg-sun">
-              <img src="sun.svg" alt="Sol" width="20" height="20" />
+              <img
+                src="sun.svg"
+                alt="Sol"
+                width="20"
+                height="20"
+                loading="lazy"
+              />
             </span>
           </h1>
           <nav>
@@ -65,15 +71,25 @@
         <h1>Vídeos y artículos de interés</h1>
         <div class="grid-videos">
           <article>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/jMR-I5fV6RM?si=wet0ZvfMeuA3yodD"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
+            <div
+              class="video-thumbnail"
+              style="
+                background-image: url('https://img.youtube.com/vi/jMR-I5fV6RM/hqdefault.jpg');
+              "
+              onclick="loadVideo(this, 'jMR-I5fV6RM')"
+            >
+              <div class="play-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="48"
+                  height="48"
+                  fill="white"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
             <div class="card-content">
               <h2>Elige Soria</h2>
               <p>
@@ -85,15 +101,25 @@
             </div>
           </article>
           <article>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/Bd4Lo9etmDE?si=jXn8zFpeVQftgauj"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
+            <div
+              class="video-thumbnail"
+              style="
+                background-image: url('https://img.youtube.com/vi/Bd4Lo9etmDE/hqdefault.jpg');
+              "
+              onclick="loadVideo(this, 'Bd4Lo9etmDE')"
+            >
+              <div class="play-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="48"
+                  height="48"
+                  fill="white"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
             <div class="card-content">
               <h2>Gastronomia Soriana</h2>
               <p>
@@ -105,15 +131,25 @@
             </div>
           </article>
           <article>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/oT1GX8yQhuI?si=xoAcPSeE2VG9hB0t"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
+            <div
+              class="video-thumbnail"
+              style="
+                background-image: url('https://img.youtube.com/vi/oT1GX8yQhuI/hqdefault.jpg');
+              "
+              onclick="loadVideo(this, 'oT1GX8yQhuI')"
+            >
+              <div class="play-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="48"
+                  height="48"
+                  fill="white"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
             <div class="card-content">
               <h2>Conviertete en un auténtico escalador</h2>
               <p>
@@ -126,7 +162,6 @@
           </article>
           <article>
             <picture>
-              <!-- Si el navegador soporta WebP, se usa la imagen WebP -->
               <source
                 srcset="
                   img/Soria_1dia-400.webp   400w,
@@ -136,9 +171,8 @@
                 "
                 type="image/webp"
                 sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+                loading="lazy"
               />
-
-              <!-- Si el navegador no soporta WebP, se usa la imagen JPG -->
               <source
                 srcset="
                   img/Soria_1dia-400.jpg   400w,
@@ -148,15 +182,15 @@
                 "
                 type="image/jpeg"
                 sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+                loading="lazy"
               />
-
-              <!-- Imagen por defecto si no hay soporte para WebP o JPG -->
               <img
                 src="img/Soria_1dia-1000.jpg"
                 alt="Plaza Mayor de Soria con el eslogan: Soria en 1 día"
                 class="img-fluid"
                 width="1000"
                 height="667"
+                loading="lazy"
               />
             </picture>
             <div class="card-content">
@@ -183,7 +217,6 @@
           </article>
           <article>
             <picture>
-              <!-- Si el navegador soporta WebP, se usa la imagen WebP -->
               <source
                 srcset="
                   img/turismo_soria-400.webp   400w,
@@ -193,9 +226,8 @@
                 "
                 type="image/webp"
                 sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+                loading="lazy"
               />
-
-              <!-- Si el navegador no soporta WebP, se usa la imagen JPG -->
               <source
                 srcset="
                   img/turismo_soria-400.jpg   400w,
@@ -205,15 +237,15 @@
                 "
                 type="image/jpeg"
                 sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+                loading="lazy"
               />
-
-              <!-- Imagen por defecto si no hay soporte para WebP o JPG -->
               <img
                 src="img/turismo_soria-1000.jpg"
                 alt="Rutas por Soria"
                 class="img-fluid"
                 width="1000"
                 height="667"
+                loading="lazy"
               />
             </picture>
             <div class="card-content">
@@ -236,7 +268,6 @@
           </article>
           <article>
             <picture>
-              <!-- Si el navegador soporta WebP, se usa la imagen WebP -->
               <source
                 srcset="
                   img/animas88-1-400.webp   400w,
@@ -246,9 +277,8 @@
                 "
                 type="image/webp"
                 sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+                loading="lazy"
               />
-
-              <!-- Si el navegador no soporta WebP, se usa la imagen JPG -->
               <source
                 srcset="
                   img/animas88-1-400.jpg   400w,
@@ -258,35 +288,32 @@
                 "
                 type="image/jpeg"
                 sizes="(max-width: 500px) 100vw, (max-width: 800px) 50vw, (max-width: 1325px) 33vw, 25vw"
+                loading="lazy"
               />
-
-              <!-- Imagen por defecto si no hay soporte para WebP o JPG -->
               <img
                 src="img/animas88-1-1000.jpg"
                 alt="Festival de las ánimas"
                 class="img-fluid"
                 width="1000"
                 height="667"
+                loading="lazy"
               />
             </picture>
-
             <div class="card-content">
               <h2>
-                <a href="https://www.festivaldelasanimas.com/"
-                  >XXXIX Festival de las ánimas</a
+                <a
+                  href="https://www.turismosoria.es/fiestas-y-tradiciones/festival-de-las-animas/"
+                  >Festival de las Ánimas en Soria</a
                 >
               </h2>
               <p>
-                Del 22 de octubre al 3 de noviembre de 2024, puedes sumergirte
-                en una experiencia única llena de tradición, misterio y emoción
-                en el corazón de Soria (España). El Festival de las Ánimas es
-                una celebración anual que rinde homenaje a la figura de Gustavo
-                Adolfo Bécquer y a su leyenda El Monte de las Ánimas. Durante
-                este evento excepcional, las calles históricas de Soria se
-                iluminan con una atmósfera especial, combinando elementos
-                culturales y artísticos en un tributo conmovedor.
+                El Festival de las Ánimas en Soria es una de las fiestas más
+                destacadas de la región. Un evento lleno de historia, tradición
+                y cultura que se celebra cada año en la ciudad.
               </p>
-              <a href="https://www.festivaldelasanimas.com/" class="more"
+              <a
+                href="https://www.turismosoria.es/fiestas-y-tradiciones/festival-de-las-animas/"
+                class="more"
                 >Leer más</a
               >
             </div>
@@ -310,16 +337,17 @@
                 img/logo-transparente-500.png 500w
               "
               sizes="(max-width: 500px) 50vw, (max-width: 800px) 20vw, (max-width: 1880px) 10vw, 5vw"
+              loading="lazy"
             />
           </a>
           <div class="footer-nav">
             <ul>
               <li><a href="index.html" title="Página principal">Home</a></li>
               <li>
-                <a href="categoria.html" title="Categoria">Categorías</a>
+                <a href="categoria.html" title="Categorías">Categorías</a>
               </li>
               <li>
-                <a href="detalle.html" title="Detalles sobre las categorias"
+                <a href="detalle.html" title="Detalles sobre las categorías"
                   >Detalles</a
                 >
               </li>
@@ -330,17 +358,26 @@
             <ul class="social">
               <li>
                 <a href="#" title="Ir a Twitter"
-                  ><img src="img/twitter.svg" alt="Logo de Twitter"
+                  ><img
+                    src="img/twitter.svg"
+                    alt="Logo de Twitter"
+                    loading="lazy"
                 /></a>
               </li>
               <li>
                 <a href="#" title="Ir a Instagram"
-                  ><img src="img/instagram.svg" alt="Logo de Instagram"
+                  ><img
+                    src="img/instagram.svg"
+                    alt="Logo de Instagram"
+                    loading="lazy"
                 /></a>
               </li>
               <li>
                 <a href="#" title="Ir a YouTube"
-                  ><img src="img/youtube.svg" alt="Logo de YouTube"
+                  ><img
+                    src="img/youtube.svg"
+                    alt="Logo de YouTube"
+                    loading="lazy"
                 /></a>
               </li>
             </ul>
@@ -355,6 +392,6 @@
         </div>
       </div>
     </footer>
-    <script src="js/app.js"></script>
+    <script src="js/app.js" async></script>
   </body>
 </html>

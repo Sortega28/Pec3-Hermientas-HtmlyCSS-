@@ -11,7 +11,6 @@
       content="Descubre Soria, una magnifica ciudad, con lugares por descubrir y con una gente maravillosa"
     />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="icon" href="img/logo.png" type="image/png" />
   </head>
   <body>
     <header class="header">
@@ -23,6 +22,7 @@
               alt="Logo Soria"
               width="162"
               height="162"
+              loading="lazy"
               srcset="
                 img/logo-100.png 100w,
                 img/logo-200.png 200w,
@@ -30,11 +30,18 @@
                 img/logo-500.png 500w
               "
               sizes="(max-width: 500px) 50vw, (max-width: 800px) 20vw, (max-width: 2000px) 10vw, 5vw"
+              loading="lazy"
           /></a>
           <h1>
             Descubre Soria
             <span class="svg-sun">
-              <img src="sun.svg" alt="Sol" width="20" height="20" />
+              <img
+                src="sun.svg"
+                alt="Sol"
+                width="20"
+                height="20"
+                loading="lazy"
+              />
             </span>
           </h1>
           <nav>
@@ -77,6 +84,7 @@
               alt="Logo Soria"
               width="102"
               height="102"
+              loading="lazy"
               srcset="
                 img/logo-transparente-100.png 100w,
                 img/logo-transparente-200.png 200w,
@@ -84,6 +92,7 @@
                 img/logo-transparente-500.png 500w
               "
               sizes="(max-width: 500px) 50vw, (max-width: 800px) 20vw, (max-width: 2000px) 10vw, 5vw"
+              loading="lazy"
             />
           </a>
           <div class="footer-nav">
@@ -106,17 +115,26 @@
             <ul class="social">
               <li>
                 <a href="#" title="Ir a Twitter"
-                  ><img src="img/twitter.svg" alt="Logo de Twitter"
+                  ><img
+                    src="img/twitter.svg"
+                    alt="Logo de Twitter"
+                    loading="lazy"
                 /></a>
               </li>
               <li>
                 <a href="#" title="Ir a Instagram"
-                  ><img src="img/instagram.svg" alt="Logo de Instagram"
+                  ><img
+                    src="img/instagram.svg"
+                    alt="Logo de Instagram"
+                    loading="lazy"
                 /></a>
               </li>
               <li>
                 <a href="#" title="Ir a YouTube"
-                  ><img src="img/youtube.svg" alt="Logo de YouTube"
+                  ><img
+                    src="img/youtube.svg"
+                    alt="Logo de YouTube"
+                    loading="lazy"
                 /></a>
               </li>
             </ul>
@@ -131,6 +149,6 @@
         </div>
       </div>
     </footer>
-    <script src="js/app.js"></script>
+    <script src="js/app.js" async></script>
   </body>
 </html>
