@@ -328,12 +328,17 @@ main.portada {
     padding-right: 1rem;
     padding-left: 1rem;
 }
+
+.container-fluid h2{
+    margin-top: 6rem;
+}
 .container {
     width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
+
 }
 
 @media (min-width: 992px) {
