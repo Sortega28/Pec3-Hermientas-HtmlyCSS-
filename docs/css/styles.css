@@ -377,6 +377,13 @@ main.portada {
     animation: fadeIn 2s ease-out;
   }
   
+  /* Usar imagen WebP si el navegador lo soporta */
+  @supports (background-image: url(../img/Soria_catedral.webp)) {
+    .portada-image {
+      background-image: url(../img/Soria_catedral.webp); /* Si soporta WebP, usa WebP */
+    }
+  }
+  
   @keyframes fadeIn {
     0% {
       opacity: 0;
