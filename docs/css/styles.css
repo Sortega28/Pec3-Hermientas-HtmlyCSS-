@@ -272,6 +272,11 @@ footer a:hover {
 footer ul.social li img:hover {
     opacity: 0.7;
 }
+.cta-link {
+    padding: 10px 20px;  /* Añade espacio alrededor del texto */
+    display: inline-block;
+    font-size: 16px; /* Tamaño de fuente adecuado */
+  }
 
 @media(min-width: 992px) {
     .flex-footer {
