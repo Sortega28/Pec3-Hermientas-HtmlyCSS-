@@ -17,18 +17,31 @@
       <div class="container-fluid">
         <div class="top">
           <a href="index.html"
-            ><img
+            ><source
+              srcset="
+                img/logo-100.webp 100w,
+                img/logo-200.webp 200w,
+                img/logo-400.webp 400w,
+                img/logo-500.webp 500w
+              "
+              type="image/webp"
+              sizes="(max-width: 500px) 50vw, (max-width: 800px) 20vw, (max-width: 1325px) 10vw, 5vw"
+              loading="lazy" />
+            <source
+              srcset="
+                img/logo-100.jpg 100w,
+                img/logo-200.jpg 200w,
+                img/logo-400.jpg 400w,
+                img/logo-500.jpg 500w
+              "
+              type="image/jpeg"
+              sizes="(max-width: 500px) 50vw, (max-width: 800px) 20vw, (max-width: 1325px) 10vw, 5vw"
+              loading="lazy" />
+            <img
               src="img/logo-500.png"
               alt="Logo Soria"
               width="100"
               height="100"
-              srcset="
-                img/logo-100.png 100w,
-                img/logo-200.png 200w,
-                img/logo-400.png 400w,
-                img/logo-500.png 500w
-              "
-              sizes="(max-width: 500px) 50vw, (max-width: 800px) 20vw, (max-width: 1325px) 10vw, 5vw"
               loading="lazy"
           /></a>
           <h1>
@@ -106,7 +119,7 @@
                 class="img-fluid mask-img imagen-destacada"
                 width="1000"
                 height="667"
-                loading="lazy"
+                loading="eager"
               />
             </picture>
             <header>
@@ -475,18 +488,33 @@
       <div class="container-fluid">
         <div class="flex-footer">
           <a href="index.html" aria-label="Ir a la página principal">
+            <source
+              srcset="
+                img/logo-transparente-100.webp 100w,
+                img/logo-transparente-200.webp 200w,
+                img/logo-transparente-400.webp 400w,
+                img/logo-transparente-500.webp 500w
+              "
+              type="image/webp"
+              sizes="(max-width: 500px) 50vw, (max-width: 800px) 20vw, (max-width: 1325px) 10vw, 5vw"
+              loading="lazy"
+            />
+            <source
+              srcset="
+                img/logo-transparente-100.jpg 100w,
+                img/logo-transparente-200.jpg 200w,
+                img/logo-transparente-400.jpg 400w,
+                img/logo-transparente-500.jpg 500w
+              "
+              type="image/jpeg"
+              sizes="(max-width: 500px) 50vw, (max-width: 800px) 20vw, (max-width: 1325px) 10vw, 5vw"
+              loading="lazy"
+            />
             <img
               src="img/logo-transparente-500.png"
               alt="Logo Soria"
               width="102"
               height="102"
-              srcset="
-                img/logo-transparente-100.png 100w,
-                img/logo-transparente-200.png 200w,
-                img/logo-transparente-400.png 400w,
-                img/logo-transparente-500.png 500w
-              "
-              sizes="(max-width: 500px) 50vw, (max-width: 800px) 20vw, (max-width: 1880px) 10vw, 5vw"
               loading="lazy"
             />
           </a>
