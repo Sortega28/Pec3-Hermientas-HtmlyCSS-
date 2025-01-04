@@ -262,6 +262,7 @@ footer a:hover {
     color: var(--neutral-color);
 }
 
+
 .footer-nav li{
     display: inline-block;
     margin-right: 20px;
@@ -309,7 +310,8 @@ footer ul.social li img:hover {
     }
   
     .footer-nav li {
-      margin-right: 0; 
+      margin-right: 0;
+      margin-bottom: 0.5rem; 
     }
   }  
 
