@@ -1,6 +1,6 @@
 :root {
     --main-color: rgb(97, 121, 70);
-    --accent-color: rgb(230, 151, 151);
+    --accent-color: rgb(255, 103, 103);
     --light-accent-color: rgb(255, 226, 226, 0.35);
     --neutral-color: rgb(229, 225, 254);
     --grey: rgb(158, 157, 171);
@@ -89,6 +89,7 @@ a {
     text-decoration: none;
     border-bottom: 1px dotted;
     padding-bottom: 2px;
+    font-weight: bold;
 }
 a:hover {
     color: var(--main-color);
